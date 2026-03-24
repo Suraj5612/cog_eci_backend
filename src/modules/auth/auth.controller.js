@@ -8,7 +8,7 @@ export const register = async (req, res, next) => {
 
     const user = await authService.register(validatedData);
 
-    return successResponse(res, user, "User registered successfully", 201);
+    return successResponse(res, user, "User registered", 201);
   } catch (error) {
     next(error);
   }
@@ -20,7 +20,7 @@ export const login = async (req, res, next) => {
 
     const result = await authService.login(validatedData);
 
-    return successResponse(res, result, "Login successful", 200);
+    return successResponse(res, result, "Login successful");
   } catch (error) {
     next(error);
   }
@@ -32,7 +32,7 @@ export const getUser = async (req, res, next) => {
 
     const user = await authService.getMe(userId);
 
-    return successResponse(res, user, "User fetched successfully", 200);
+    return successResponse(res, user, "User fetched");
   } catch (error) {
     next(error);
   }
