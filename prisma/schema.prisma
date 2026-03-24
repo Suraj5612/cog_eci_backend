@@ -19,3 +19,17 @@ model User {
   password    String
   createdAt   DateTime @default(now())
 }
+
+model VoterData {
+  id               Int      @id @default(autoincrement())
+  voterName        String
+  epicNumber       String   @unique
+  mobileNumber     String?
+  address          String?
+  serialNumber     Int?
+  partNumberName   String?
+  constituencyName String?
+  stateName        String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
